@@ -7,11 +7,12 @@ import { Course } from '../model/course';
   providedIn: 'root'
 })
 export class CourseService {
-
+  //properties
   private url:string = "https://webbutveckling.miun.se/files/ramschema_ht23.json"
   
   constructor(private http: HttpClient) { }
 
+  //metoder
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(this.url);
   }

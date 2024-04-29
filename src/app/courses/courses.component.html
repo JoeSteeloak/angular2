@@ -1,7 +1,16 @@
 <h2>Kurser</h2>
 
+<div class="filter">
+    <label for="filter">Filtrera kurser</label>
+    <input type="text" id="filter" [(ngModel)]="filterValue" (input)="applyFilter()">
+</div>
+
+@if(filteredCourselist.length == 0) {
+    <p>Inga kurser hittades...</p>
+}
+
 <ul>
-    <li *ngFor="let course of courselist">
+    <li *ngFor="let course of filteredCourselist">
         {{ course.coursename }} <br>
         {{ course.code }} <br>
         Progression: {{ course.progression}} <br>
