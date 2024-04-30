@@ -31,4 +31,52 @@ export class CoursesComponent {
       course.coursename.toLowerCase().includes(this.filterValue.toLowerCase())
     );
   }
+
+  sortByName(): void {
+    this.filteredCourselist = this.filteredCourselist.sort((a, b) => {
+      const nameA = a.coursename.toUpperCase(); // ignore upper and lowercase
+      const nameB = b.coursename.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      // names must be equal
+      return 0;
+    })
+  }
+
+  sortByCode(): void {
+    this.filteredCourselist = this.filteredCourselist.sort((a, b) => {
+      const nameA = a.code.toUpperCase(); // ignore upper and lowercase
+      const nameB = b.code.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      // names must be equal
+      return 0;
+    })
+  }
+
+  sortByProgression(): void {
+    this.filteredCourselist = this.filteredCourselist.sort((a, b) => {
+      const nameA = a.progression.toUpperCase(); // ignore upper and lowercase
+      const nameB = b.progression.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      // names must be equal
+      return 0;
+    })
+  }
 }

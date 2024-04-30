@@ -6,14 +6,26 @@
 </div>
 
 @if(filteredCourselist.length == 0) {
-    <p>Inga kurser hittades...</p>
+<p>Inga kurser hittades...</p>
 }
 
-<ul>
-    <li *ngFor="let course of filteredCourselist">
-        {{ course.coursename }} <br>
-        {{ course.code }} <br>
-        Progression: {{ course.progression}} <br>
-        <a href="{{ course.syllabus }}">kursplan</a>
-    </li>
-</ul>
+<div class="container">
+<table class="table">
+    <thead class="table-header">
+        <tr>
+            <th (click)="sortByName()">Kursnamn</th>
+            <th (click)="sortByCode()">Kod</th>
+            <th (click)="sortByProgression()">Progression</th>
+            <th>Kursplan</th>
+        </tr>
+    </thead>
+    <tbody class="table-content">
+        <tr class="table-row" *ngFor="let course of filteredCourselist">
+            <td class="table-data">{{ course.coursename }}</td>
+            <td class="table-data">{{ course.code }}</td>
+            <td class="table-data">{{ course.progression }}</td>
+            <td class="table-data"><a [href]="course.syllabus">Kursplan</a></td>
+        </tr>
+    </tbody>
+</table>
+</div>
