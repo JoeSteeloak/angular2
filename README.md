@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
+This is a webbapp that uses Angular and HttpClient to consume an API to display courses from my schools webdeveloper program.
+It can fetch the courses from the API and display them as well as filter by name and code, and sort the different rows in the table.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
